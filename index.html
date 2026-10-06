@@ -29,7 +29,6 @@
   --muted-dark:#93A6B1;
   --ember:#E0522B;
   --ember-dark:#FF6D42;
-  --ember-soft:#FBE6DE;
   --steel:#2C6B7B;
   --maxw:1180px;
   --gut:clamp(16px,5vw,56px);
@@ -85,8 +84,6 @@ p{margin:0}
 .btn-ember:hover{background:#C9431F}
 .btn-ghost{border-color:#3A4A55;color:#fff}
 .btn-ghost:hover{border-color:#fff}
-.btn-outline{border-color:var(--ink);color:var(--ink)}
-.btn-outline:hover{background:var(--ink);color:#fff}
 .btn-sm{padding:9px 16px;font-size:13.5px}
 .burger{display:none;background:none;border:1px solid #3A4A55;border-radius:2px;color:#fff;width:40px;height:38px;cursor:pointer;font-size:17px;line-height:1}
 :focus-visible{outline:2px solid var(--ember-dark);outline-offset:3px}
@@ -104,16 +101,16 @@ p{margin:0}
 .eyebrow i{width:26px;height:1px;background:var(--ember-dark);display:inline-block;font-style:normal}
 .hero h1{font-size:clamp(34px,6.1vw,63px);max-width:16ch}
 .hero h1 em{font-style:normal;color:var(--ember-dark)}
-.hero-lead{margin-top:26px;max-width:58ch;font-size:clamp(16px,1.7vw,18.5px);color:#C6D2D9}
+.hero-lead{margin-top:26px;max-width:56ch;font-size:clamp(16px,1.7vw,18.5px);color:#C6D2D9}
 .hero-cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
 
 /* ---------- spec strip ---------- */
 .specs{background:var(--ink-2);border-top:1px solid var(--line-dark);color:#fff}
-.specs-in{display:grid;grid-template-columns:repeat(4,1fr)}
-.spec{padding:26px 26px 26px 0;border-left:1px solid var(--line-dark);padding-left:26px}
+.specs-in{display:grid;grid-template-columns:repeat(2,1fr)}
+.spec{padding:30px 30px 30px 0;border-left:1px solid var(--line-dark);padding-left:30px}
 .spec:first-child{border-left:0;padding-left:0}
-.spec b{display:block;font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(22px,2.7vw,31px);letter-spacing:-.02em;line-height:1.1;font-variant-numeric:tabular-nums}
-.spec span{display:block;color:var(--muted-dark);font-size:13px;margin-top:6px;line-height:1.4}
+.spec b{display:block;font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(24px,3.1vw,36px);letter-spacing:-.022em;line-height:1.1;font-variant-numeric:tabular-nums}
+.spec span{display:block;color:var(--muted-dark);font-size:13.5px;margin-top:6px;line-height:1.4}
 
 /* ---------- section scaffolding ---------- */
 section{scroll-margin-top:84px}
@@ -121,7 +118,7 @@ section{scroll-margin-top:84px}
 .sec-head{margin-bottom:clamp(34px,5vw,52px)}
 .sec-head .mono{color:var(--ember)}
 .sec-head h2{font-size:clamp(27px,4vw,42px);margin-top:14px;max-width:20ch}
-.sec-head p{margin-top:18px;max-width:62ch;color:var(--muted);font-size:17px}
+.sec-head p{margin-top:18px;max-width:60ch;color:var(--muted);font-size:17px}
 .sec-dark{background:var(--ink);color:#fff}
 .sec-dark .sec-head p{color:var(--muted-dark)}
 .sec-dark .sec-head .mono{color:var(--ember-dark)}
@@ -131,54 +128,56 @@ section{scroll-margin-top:84px}
 .about h2{font-size:clamp(27px,3.8vw,40px)}
 .about .mono{color:var(--ember);display:block;margin-bottom:14px}
 .about-body{border-left:2px solid var(--ember);padding-left:clamp(20px,3vw,32px)}
-.about-body p+p{margin-top:18px}
-.about-body p{font-size:17px}
+.about-body p{font-size:17.5px}
 .pull{
   margin-top:28px;padding:22px 24px;background:var(--card);border:1px solid var(--line);
   font-family:Archivo,sans-serif;font-weight:700;font-size:19px;line-height:1.35;letter-spacing:-.015em;
 }
 .pull strong{color:var(--ember)}
 
-/* ---------- processo ---------- */
-.steps{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line-dark)}
-.step{padding:30px 22px 34px;border-right:1px solid var(--line-dark);position:relative}
-.step:last-child{border-right:0}
-.step .n{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;color:var(--ember-dark);letter-spacing:.1em}
-.step h3{font-size:19px;margin-top:14px;font-weight:700;letter-spacing:-.015em}
-.step p{margin-top:11px;font-size:14.5px;color:var(--muted-dark);line-height:1.58}
-
-/* ---------- servizi cards ---------- */
-.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.card{background:var(--card);padding:clamp(24px,3.2vw,36px)}
-.card .mono{color:var(--steel)}
-.card h3{font-size:22px;margin-top:12px;font-weight:700;letter-spacing:-.017em}
-.card p{margin-top:12px;color:var(--muted);font-size:15.5px}
-.card ul{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:9px}
-.card li{position:relative;padding-left:20px;font-size:15px;color:var(--ink)}
-.card li::before{content:"";position:absolute;left:0;top:.6em;width:9px;height:1.5px;background:var(--ember)}
-
-/* ---------- mandati ---------- */
+/* ---------- mandanti / collaborazioni ---------- */
 .brands{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark)}
-.brandcard{background:var(--ink-2);padding:28px 26px 30px;display:flex;flex-direction:column;gap:9px;min-height:150px}
+.brandcard{
+  background:var(--ink-2);padding:34px 28px;min-height:170px;
+  display:flex;flex-direction:column;justify-content:space-between;gap:16px;
+}
 .brandcard .ref{font-family:"IBM Plex Mono",monospace;font-size:11px;color:#5E7381;letter-spacing:.12em}
-.brandcard b{font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(20px,2.4vw,26px);letter-spacing:-.025em;line-height:1.1}
-.brandcard span{color:var(--muted-dark);font-size:14px;margin-top:auto;line-height:1.45}
-.brand-note{margin-top:26px;color:var(--muted-dark);font-size:14.5px;max-width:64ch}
+.brandcard b{font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(26px,3.4vw,38px);letter-spacing:-.03em;line-height:1}
+.subhead{display:flex;align-items:baseline;gap:16px;margin:clamp(44px,6vw,64px) 0 22px}
+.subhead .mono{color:var(--ember-dark);white-space:nowrap}
+.subhead i{flex:1;height:1px;background:var(--line-dark);display:block}
+.collabs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark)}
+.collab{background:var(--ink);padding:24px 26px;font-family:Archivo,sans-serif;font-weight:700;font-size:21px;letter-spacing:-.022em}
+.brand-note{margin-top:26px;color:var(--muted-dark);font-size:14.5px;max-width:60ch}
 .brand-note a{color:var(--ember-dark)}
 
-/* ---------- settori ---------- */
-.two{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(20px,3vw,32px)}
-.panel{background:var(--card);border:1px solid var(--line);padding:clamp(26px,3.4vw,38px)}
-.panel.accent{background:var(--ink);border-color:var(--ink);color:#fff}
-.panel .mono{color:var(--ember)}
-.panel.accent .mono{color:var(--ember-dark)}
-.panel h3{font-size:24px;margin-top:12px;letter-spacing:-.018em}
-.panel>p{margin-top:14px;color:var(--muted);font-size:16px}
-.panel.accent>p{color:var(--muted-dark)}
-.taglist{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
-.tag{border:1px solid var(--line);padding:7px 13px;font-size:13.5px;border-radius:2px;background:var(--paper)}
-.panel.accent .tag{border-color:var(--line-dark);background:var(--ink-2);color:#D9E2E7}
-.panel .btn{margin-top:26px}
+/* ---------- servizi ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:var(--card);padding:clamp(26px,3.2vw,36px);display:flex;flex-direction:column;gap:12px}
+.card .mono{color:var(--steel)}
+.card h3{font-size:23px;font-weight:700;letter-spacing:-.018em}
+.card p{color:var(--muted);font-size:15.5px}
+
+/* ---------- processo ---------- */
+.steps{display:grid;grid-template-columns:repeat(5,1fr);border-top:1px solid var(--line-dark)}
+.step{
+  padding:34px 20px 40px;border-right:1px solid var(--line-dark);
+  display:flex;flex-direction:column;gap:18px;min-height:150px;
+}
+.step:last-child{border-right:0}
+.step .n{font-family:"IBM Plex Mono",monospace;font-size:12px;font-weight:500;color:var(--ember-dark);letter-spacing:.1em}
+.step h3{font-size:20px;font-weight:700;letter-spacing:-.018em;margin-top:auto}
+
+/* ---------- chi serviamo ---------- */
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.whocard{background:var(--card);padding:clamp(28px,3.4vw,40px);display:flex;flex-direction:column;gap:20px;min-height:160px}
+.whocard .ref{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ember);letter-spacing:.12em}
+.whocard b{font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(20px,2.4vw,26px);letter-spacing:-.025em;line-height:1.1;margin-top:auto}
+.who-note{
+  margin-top:24px;padding:22px 24px;border:1px solid var(--line);background:var(--card);
+  font-size:17px;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;
+}
+.who-note span.mono{color:var(--ember)}
 
 /* ---------- contatti ---------- */
 .contact{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(32px,5vw,64px);align-items:start}
@@ -220,21 +219,16 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
   .nav a{padding:13px 0;border-bottom:1px solid var(--line-dark)}
   .nav .btn{margin-top:14px}
   .burger{display:block}
-  .specs-in{grid-template-columns:repeat(2,1fr)}
-  .spec{padding:22px 0 22px 22px;border-left:1px solid var(--line-dark)}
-  .spec:nth-child(odd){border-left:0;padding-left:0}
-  .spec:nth-child(n+3){border-top:1px solid var(--line-dark)}
   .about,.contact{grid-template-columns:1fr}
   .steps{grid-template-columns:repeat(2,1fr)}
   .step{border-bottom:1px solid var(--line-dark)}
   .step:nth-child(2n){border-right:0}
-  .brands{grid-template-columns:repeat(2,1fr)}
+  .cards,.who,.collabs{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:640px){
-  .cards,.two,.brands,.steps,.frow{grid-template-columns:1fr}
+  .specs-in,.cards,.who,.brands,.collabs,.steps,.frow{grid-template-columns:1fr}
   .step{border-right:0}
-  .specs-in{grid-template-columns:1fr}
-  .spec{border-left:0;padding-left:0}
+  .spec{border-left:0;padding-left:0;padding-block:24px}
   .spec+.spec{border-top:1px solid var(--line-dark)}
   .hero h1{max-width:none}
 }
@@ -249,9 +243,9 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
     <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Apri il menu">☰</button>
     <nav class="nav" id="nav">
       <a href="#chi-siamo">Chi siamo</a>
+      <a href="#mandanti">Aziende mandanti</a>
       <a href="#servizi">Servizi</a>
-      <a href="#mandati">Mandati</a>
-      <a href="#settori">A chi ci rivolgiamo</a>
+      <a href="#chi-serviamo">Chi serviamo</a>
       <a href="#contatti">Contatti</a>
       <a class="btn btn-ember btn-sm" href="#contatti">Richiedi un'offerta</a>
     </nav>
@@ -262,22 +256,20 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
 
   <section class="hero">
     <div class="wrap hero-in">
-      <p class="eyebrow mono"><i aria-hidden="true"></i> Agenzia di rappresentanza termotecnica · Roma e provincia</p>
+      <p class="eyebrow mono"><i aria-hidden="true"></i> Agenzia di rappresentanza termotecnica · Roma e Lazio</p>
       <h1>Tra chi produce e chi installa, <em>senza passaggi intermedi.</em></h1>
-      <p class="hero-lead">Rappresentiamo aziende produttrici del settore termotecnico e vendiamo direttamente a installatori, imprese e studi tecnici su Roma e provincia. Sopralluogo, dimensionamento, selezione tecnica e offerta arrivano dallo stesso interlocutore: nessun distributore in mezzo.</p>
+      <p class="hero-lead">Rappresentiamo aziende produttrici del settore termotecnico e vendiamo direttamente a imprese installatrici, imprese di costruzioni e general contractor. Un solo interlocutore per la parte tecnica e per quella commerciale.</p>
       <div class="hero-cta">
         <a class="btn btn-ember" href="#contatti">Richiedi un'offerta</a>
-        <a class="btn btn-ghost" href="#mandati">Vedi i mandati</a>
+        <a class="btn btn-ghost" href="#mandanti">Aziende mandanti</a>
       </div>
     </div>
   </section>
 
   <section class="specs" aria-label="GG Service in sintesi">
     <div class="wrap specs-in">
-      <div class="spec"><b>2016</b><span>Anno di fondazione dell'agenzia</span></div>
-      <div class="spec"><b>10+ anni</b><span>Di settore alle spalle, come sub-agenzia</span></div>
-      <div class="spec"><b>6</b><span>Mandati in portafoglio</span></div>
-      <div class="spec"><b>Roma e provincia</b><span>Area operativa presidiata di persona</span></div>
+      <div class="spec"><b>10 anni</b><span>Di esperienza nel settore termotecnico</span></div>
+      <div class="spec"><b>Roma, provincia e Lazio</b><span>Territorio presidiato di persona</span></div>
     </div>
   </section>
 
@@ -285,182 +277,97 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
     <div class="wrap about">
       <div>
         <span class="mono">Chi siamo</span>
-        <h2>Dieci anni di rete, prima ancora dell'agenzia.</h2>
+        <h2>Agenzia di rappresentanza termotecnica.</h2>
       </div>
       <div class="about-body">
-        <p>GG Service nasce nel 2016, dopo oltre dieci anni di lavoro nel settore termotecnico come sub-agenzia. In quegli anni è stata costruita la cosa che in questo mestiere conta più di tutto: una rete di contatti reale sul mercato di Roma e provincia — installatori, termoidraulici, imprese, studi di progettazione — fatta di visite, cantieri e rapporti che durano nel tempo.</p>
-        <p>Oggi quella rete è il canale con cui le aziende che rappresentiamo arrivano sul mercato romano. Non siamo un magazzino e non siamo un distributore: siamo la parte commerciale e tecnica del produttore, presente sul territorio, con un solo referente dal primo sopralluogo alla consegna.</p>
-        <div class="pull">Un solo interlocutore per la parte tecnica e per quella commerciale. <strong>Chi fa il dimensionamento è la stessa persona che firma l'offerta.</strong></div>
+        <p>Dopo dieci anni di lavoro nel settore termotecnico, nel 2025 nasce GG Service: agenzia di rappresentanza che opera principalmente sul territorio di Roma e provincia, e in tutto il Lazio, con i mandati delle aziende che rappresenta.</p>
+        <div class="pull">Un solo interlocutore per la parte tecnica e per quella commerciale.</div>
       </div>
     </div>
   </section>
 
-  <section class="sec sec-dark" id="servizi">
+  <section class="sec sec-dark" id="mandanti">
     <div class="wrap">
       <div class="sec-head">
-        <span class="mono">Come lavoriamo</span>
-        <h2>Dal sopralluogo all'offerta, in cinque passaggi.</h2>
-        <p>Ogni fornitura segue lo stesso percorso. È il modo in cui evitiamo preventivi generici e prodotti sovradimensionati: prima si misura l'impianto, poi si sceglie il prodotto.</p>
+        <span class="mono">Aziende mandanti</span>
+        <h2>I marchi che rappresentiamo.</h2>
       </div>
-    </div>
-    <div class="wrap">
-      <div class="steps">
-        <article class="step">
-          <span class="n">01</span>
-          <h3>Sopralluogo</h3>
-          <p>Verifica in centrale termica o in cantiere: stato dell'impianto esistente, spazi, allacci, scarichi e vincoli reali di installazione.</p>
-        </article>
-        <article class="step">
-          <span class="n">02</span>
-          <h3>Dimensionamento</h3>
-          <p>Calcolo delle potenze e delle portate sulla base dei fabbisogni rilevati, con il prodotto giusto per quella specifica applicazione.</p>
-        </article>
-        <article class="step">
-          <span class="n">03</span>
-          <h3>Selezione tecnica</h3>
-          <p>Selezioni di prodotto e datasheet completi: schede tecniche, curve, dati di targa e documentazione pronta per il progettista o per il committente.</p>
-        </article>
-        <article class="step">
-          <span class="n">04</span>
-          <h3>Offerta</h3>
-          <p>Preventivo dettagliato voce per voce, con condizioni, tempi e alternative dove esistono. Tutto quello che serve per decidere.</p>
-        </article>
-        <article class="step">
-          <span class="n">05</span>
-          <h3>Ordine e assistenza</h3>
-          <p>Gestione dell'ordine con l'azienda produttrice, monitoraggio dei tempi di consegna e supporto dopo l'installazione.</p>
-        </article>
+      <div class="brands">
+        <article class="brandcard"><span class="ref">M—01</span><b>Elco</b></article>
+        <article class="brandcard"><span class="ref">M—02</span><b>HiTec System</b></article>
+        <article class="brandcard"><span class="ref">M—03</span><b>Redge</b></article>
       </div>
+
+      <div class="subhead">
+        <span class="mono">Collaborazioni</span>
+        <i aria-hidden="true"></i>
+      </div>
+      <div class="collabs">
+        <article class="collab">AN Camini</article>
+        <article class="collab">BPS Clima</article>
+        <article class="collab">Raema</article>
+      </div>
+
+      <p class="brand-note">Per informazioni sui marchi che rappresentiamo, <a href="#contatti">scrivici</a>.</p>
     </div>
   </section>
 
-  <section class="sec">
+  <section class="sec" id="servizi">
     <div class="wrap">
       <div class="sec-head">
         <span class="mono">Servizi</span>
         <h2>Vendita diretta e rappresentanza.</h2>
-        <p>Due attività che si tengono insieme: portiamo sul mercato i prodotti delle aziende che rappresentiamo e li vendiamo direttamente a chi li installa.</p>
       </div>
       <div class="cards">
         <article class="card">
-          <span class="mono">01 — Commerciale</span>
+          <span class="mono">01</span>
           <h3>Vendita diretta B2B</h3>
-          <p>Vendita dei prodotti a mandato direttamente a imprese e installatori, senza passare da distributori o rivenditori intermedi.</p>
-          <ul>
-            <li>Condizioni e listini direttamente dall'azienda produttrice</li>
-            <li>Un unico referente per trattativa, ordine e post-vendita</li>
-            <li>Gestione di forniture singole e di commesse ripetute</li>
-          </ul>
+          <p>Vendita dei prodotti a mandato direttamente alle imprese, senza distributori.</p>
         </article>
         <article class="card">
-          <span class="mono">02 — Rappresentanza</span>
-          <h3>Servizio di rappresentanza</h3>
-          <p>Promuoviamo i prodotti delle aziende e delle agenzie che ci affidano il mandato presso i potenziali clienti del territorio romano.</p>
-          <ul>
-            <li>Presentazione dei prodotti a installatori, imprese e progettisti</li>
-            <li>Presidio diretto di Roma e provincia, con visite sul campo</li>
-            <li>Ritorno di informazioni dal mercato all'azienda mandante</li>
-          </ul>
+          <span class="mono">02</span>
+          <h3>Rappresentanza</h3>
+          <p>Proponiamo i prodotti delle aziende mandanti ai potenziali clienti sul territorio.</p>
         </article>
         <article class="card">
-          <span class="mono">03 — Tecnico</span>
-          <h3>Supporto tecnico pre-vendita</h3>
-          <p>Tutto quello che serve per arrivare a un'offerta corretta sui prodotti trattati, senza scaricare il lavoro tecnico sul cliente.</p>
-          <ul>
-            <li>Sopralluogo sull'impianto e rilievo dei dati di partenza</li>
-            <li>Dimensionamento e verifica delle potenze in gioco</li>
-            <li>Selezioni tecniche e datasheet di prodotto</li>
-          </ul>
-        </article>
-        <article class="card">
-          <span class="mono">04 — Gestione</span>
-          <h3>Offerte, ordini e documentazione</h3>
-          <p>La parte amministrativa e documentale seguita fino in fondo, perché un'offerta serve a poco se poi l'ordine si perde per strada.</p>
-          <ul>
-            <li>Preventivi dettagliati e revisioni in corso di trattativa</li>
-            <li>Invio di listini, cataloghi e schede tecniche aggiornate</li>
-            <li>Inoltro dell'ordine e verifica dei tempi di consegna</li>
-          </ul>
+          <span class="mono">03</span>
+          <h3>Supporto tecnico</h3>
+          <p>Tutto quello che serve per arrivare a un'offerta sui prodotti che trattiamo.</p>
         </article>
       </div>
     </div>
   </section>
 
-  <section class="sec sec-dark" id="mandati">
+  <section class="sec sec-dark">
     <div class="wrap">
       <div class="sec-head">
-        <span class="mono">Portafoglio mandati</span>
-        <h2>I marchi che rappresentiamo.</h2>
-        <p>Aziende produttrici del settore termotecnico per cui GG Service è agenzia di rappresentanza su Roma e provincia.</p>
+        <span class="mono">Come lavoriamo</span>
+        <h2>Cinque passaggi.</h2>
       </div>
-      <div class="brands">
-        <article class="brandcard">
-          <span class="ref">M—01</span>
-          <b>Elco</b>
-          <span>Bruciatori e generatori di calore</span>
-        </article>
-        <article class="brandcard">
-          <span class="ref">M—02</span>
-          <b>HiTec System</b>
-          <span>Sistemi e componenti d'impianto</span>
-        </article>
-        <article class="brandcard">
-          <span class="ref">M—03</span>
-          <b>AN Camini</b>
-          <span>Camini e sistemi di evacuazione fumi</span>
-        </article>
-        <article class="brandcard">
-          <span class="ref">M—04</span>
-          <b>Redge</b>
-          <span>Componenti per impianti termici</span>
-        </article>
-        <article class="brandcard">
-          <span class="ref">M—05</span>
-          <b>BPS Clima</b>
-          <span>Climatizzazione e trattamento aria</span>
-        </article>
-        <article class="brandcard">
-          <span class="ref">M—06</span>
-          <b>Raema</b>
-          <span>Componenti per impianti termici</span>
-        </article>
+    </div>
+    <div class="wrap">
+      <div class="steps">
+        <article class="step"><span class="n">01</span><h3>Sopralluogo e dimensionamento</h3></article>
+        <article class="step"><span class="n">02</span><h3>Selezione tecnica</h3></article>
+        <article class="step"><span class="n">03</span><h3>Offerta</h3></article>
+        <article class="step"><span class="n">04</span><h3>Ordine</h3></article>
+        <article class="step"><span class="n">05</span><h3>Post vendita</h3></article>
       </div>
-      <p class="brand-note">Cerchi un prodotto specifico di uno di questi marchi? <a href="#contatti">Scrivici il modello o la potenza che ti serve</a> e ti rispondiamo con la selezione tecnica e il preventivo.</p>
     </div>
   </section>
 
-  <section class="sec" id="settori">
+  <section class="sec" id="chi-serviamo">
     <div class="wrap">
       <div class="sec-head">
-        <span class="mono">A chi ci rivolgiamo</span>
-        <h2>Due interlocutori, un unico lavoro.</h2>
+        <span class="mono">Chi serviamo</span>
+        <h2>A chi vendiamo i nostri prodotti.</h2>
       </div>
-      <div class="two">
-        <article class="panel">
-          <span class="mono">Lato mercato</span>
-          <h3>Se installi, progetti o manutieni impianti</h3>
-          <p>Hai un impianto da rifare o da integrare e ti serve il prodotto giusto con i numeri in mano: potenze, curve, ingombri, tempi e prezzo. Ci occupiamo noi della parte tecnica fino all'offerta.</p>
-          <div class="taglist">
-            <span class="tag">Installatori e termoidraulici</span>
-            <span class="tag">Imprese di costruzione</span>
-            <span class="tag">Manutentori e gestori d'impianto</span>
-            <span class="tag">Studi di progettazione</span>
-            <span class="tag">Termotecnici</span>
-          </div>
-          <a class="btn btn-outline" href="#contatti">Richiedi una selezione tecnica</a>
-        </article>
-        <article class="panel accent">
-          <span class="mono">Lato mandante</span>
-          <h3>Se produci e cerchi rappresentanza su Roma</h3>
-          <p>Vuoi entrare o crescere sul mercato romano senza aprire una struttura commerciale tua. Portiamo i tuoi prodotti direttamente a chi li installa, con una rete già costruita e presidiata di persona.</p>
-          <div class="taglist">
-            <span class="tag">Aziende produttrici</span>
-            <span class="tag">Agenzie in cerca di sub-agenzia</span>
-            <span class="tag">Nuovi mandati</span>
-          </div>
-          <a class="btn btn-ember" href="#contatti">Proponi un mandato</a>
-        </article>
+      <div class="who">
+        <article class="whocard"><span class="ref">C—01</span><b>Aziende installatrici</b></article>
+        <article class="whocard"><span class="ref">C—02</span><b>Imprese di costruzioni</b></article>
+        <article class="whocard"><span class="ref">C—03</span><b>General contractor</b></article>
       </div>
+      <p class="who-note"><span class="mono">Inoltre</span> Diamo supporto agli studi di progettazione.</p>
     </div>
   </section>
 
@@ -470,7 +377,7 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
         <div class="sec-head" style="margin-bottom:0">
           <span class="mono">Contatti</span>
           <h2>Parliamo dell'impianto.</h2>
-          <p>Più dettagli ci dai — tipo di impianto, potenza, marchio di interesse — più l'offerta che ricevi è precisa.</p>
+          <p>Più dettagli ci dai, più l'offerta che ricevi è precisa.</p>
         </div>
         <dl>
           <div>
@@ -482,8 +389,8 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
             <dd><a href="mailto:info@ggservice.it">info@ggservice.it</a></dd>
           </div>
           <div>
-            <dt>Area operativa</dt>
-            <dd>Roma e provincia<small>Sopralluoghi su appuntamento</small></dd>
+            <dt>Territorio</dt>
+            <dd>Roma, provincia e Lazio<small>Sopralluoghi su appuntamento</small></dd>
           </div>
           <div>
             <dt>Sede</dt>
@@ -516,16 +423,15 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
         <div class="field">
           <label for="f-tipo">Di cosa hai bisogno</label>
           <select id="f-tipo" name="tipo">
-            <option>Preventivo su un prodotto</option>
+            <option>Preventivo</option>
             <option>Sopralluogo e dimensionamento</option>
-            <option>Schede tecniche o listini</option>
-            <option>Proposta di mandato / rappresentanza</option>
+            <option>Informazioni sui marchi</option>
             <option>Altro</option>
           </select>
         </div>
         <div class="field">
           <label for="f-msg">Messaggio</label>
-          <textarea id="f-msg" name="messaggio" placeholder="Tipo di impianto, potenza indicativa, marchio di interesse, tempistiche…" required></textarea>
+          <textarea id="f-msg" name="messaggio" required></textarea>
         </div>
         <div class="consent">
           <input id="f-privacy" name="privacy" type="checkbox" required>
@@ -541,7 +447,7 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
 
 <footer>
   <div class="wrap foot-in">
-    <span>© <span id="year">2026</span> GG Service — Agenzia di rappresentanza termotecnica · Roma e provincia</span>
+    <span>© <span id="year">2026</span> GG Service — Agenzia di rappresentanza termotecnica · Roma e Lazio</span>
     <span><a href="#contatti">Contatti</a> · <a href="#">Privacy policy</a> · <a href="#">Cookie policy</a></span>
   </div>
 </footer>
