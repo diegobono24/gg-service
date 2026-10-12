@@ -154,9 +154,18 @@ section{scroll-margin-top:94px}
 .subhead i{flex:1;height:1px;background:var(--line-dark);display:block}
 .collabs{display:flex;flex-wrap:wrap;gap:14px}
 .collab{
-  background:var(--ink-2);border:1px solid var(--line-dark);border-radius:3px;
-  padding:20px 30px;font-family:Archivo,sans-serif;font-weight:700;font-size:21px;letter-spacing:-.022em;
+  background:#fff;border:1px solid rgba(255,255,255,.08);border-radius:3px;
+  flex:0 1 232px;min-height:100px;padding:20px 24px;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;transition:transform .16s,box-shadow .16s;
 }
+.collab:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.33)}
+.collab img{max-width:100%;max-height:38px;width:auto;height:auto;object-fit:contain;display:block}
+.collab::after{
+  content:"\2197";position:absolute;top:8px;right:10px;
+  font-size:12px;line-height:1;color:#9FB0BA;opacity:0;transition:opacity .16s;
+}
+.collab:hover::after{opacity:1}
 .brand-note{margin-top:26px;color:var(--muted-dark);font-size:14.5px;max-width:60ch}
 .brand-note a{color:var(--ember-dark)}
 
@@ -322,7 +331,7 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
         <h2>I marchi che rappresentiamo.</h2>
       </div>
       <div class="brands">
-        <a class="brandcard" href="https://elco-burners.com/it/it/home" target="_blank" rel="noopener">
+        <a class="brandcard" href="https://www.elcoitalia.it/" target="_blank" rel="noopener">
           <img src="assets/elco.svg" alt="Elco" width="142" height="40">
         </a>
         <a class="brandcard" href="https://www.hitecsystems.it" target="_blank" rel="noopener">
@@ -344,7 +353,9 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
         <i aria-hidden="true"></i>
       </div>
       <div class="collabs">
-        <article class="collab">BPS Clima</article>
+        <a class="collab" href="https://www.bpstecnologie.com/" target="_blank" rel="noopener">
+          <img src="assets/bps-clima.png" alt="BPS Clima" width="875" height="164">
+        </a>
       </div>
 
       <p class="brand-note">Per informazioni sui marchi che rappresentiamo, <a href="#contatti">scrivici</a>.</p>
