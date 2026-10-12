@@ -10,6 +10,10 @@
 <meta property="og:title" content="GG Service — Rappresentanza termotecnica su Roma e Lazio">
 <meta property="og:description" content="Vendita diretta B2B senza distributori. Un solo interlocutore per la parte tecnica e per quella commerciale.">
 <meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://diegobono24.github.io/gg-service/assets/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
@@ -62,15 +66,8 @@ p{margin:0}
   color:#fff;
 }
 .head-in{display:flex;align-items:center;gap:20px;height:66px}
-.brand{display:flex;align-items:center;gap:11px;text-decoration:none;margin-right:auto}
-.mark{
-  width:36px;height:36px;flex:0 0 36px;border-radius:3px;
-  background:var(--ember);
-  display:grid;place-items:center;
-  font-family:Archivo,sans-serif;font-weight:800;font-size:14px;letter-spacing:-.04em;color:#fff;
-}
-.brand b{font-family:Archivo,sans-serif;font-weight:800;font-size:17px;letter-spacing:-.02em;display:block;line-height:1.1}
-.brand span{color:var(--muted-dark);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;font-family:"IBM Plex Mono",monospace}
+.brand{display:flex;align-items:center;text-decoration:none;margin-right:auto;flex:0 1 auto;min-width:0}
+.brand img{height:30px;width:auto;max-width:100%;display:block}
 .nav{display:flex;align-items:center;gap:26px}
 .nav a{font-size:14px;text-decoration:none;color:#D9E2E7;padding:6px 0;border-bottom:1.5px solid transparent}
 .nav a:hover{color:#fff;border-bottom-color:var(--ember-dark)}
@@ -216,9 +213,24 @@ form .btn{width:100%}
 .formnote{margin-top:14px;font-size:13px;color:var(--muted-dark);text-align:center}
 
 /* ---------- footer ---------- */
-footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--line-dark);padding-block:34px}
-.foot-in{display:flex;flex-wrap:wrap;gap:14px 28px;align-items:center;justify-content:space-between;font-size:13.5px}
-.foot-in a{color:var(--muted-dark)}
+footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--line-dark);padding-block:44px 28px}
+.foot-in{
+  display:grid;grid-template-columns:minmax(0,1.3fr) minmax(0,1fr) minmax(0,1fr);
+  gap:clamp(26px,4vw,48px);align-items:start;
+}
+.foot-in a{color:var(--muted-dark);text-decoration:none;border-bottom:1px solid #243038}
+.foot-in a:hover{color:#fff;border-bottom-color:var(--ember-dark)}
+.foot-brand img{height:38px;width:auto;display:block}
+.foot-brand p{margin-top:16px;font-size:14px;line-height:1.6}
+.foot-col .mono{color:var(--ember-dark);display:block;margin-bottom:12px}
+.foot-col p{font-size:14px;line-height:1.75}
+.foot-col p span{color:#66777F}
+.foot-bottom{
+  display:flex;flex-wrap:wrap;gap:10px 24px;justify-content:space-between;
+  margin-top:clamp(30px,4vw,44px);padding-top:22px;border-top:1px solid #1A242A;font-size:13px;
+}
+.foot-bottom a{color:var(--muted-dark);text-decoration:none;border-bottom:1px solid #243038}
+.foot-bottom a:hover{color:#fff;border-bottom-color:var(--ember-dark)}
 
 /* ---------- responsive ---------- */
 @media (max-width:960px){
@@ -232,6 +244,8 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
   .nav .btn{margin-top:14px}
   .burger{display:block}
   .about,.contact{grid-template-columns:1fr}
+  .foot-in{grid-template-columns:1fr 1fr}
+  .foot-brand{grid-column:1 / -1}
   .steps{grid-template-columns:repeat(2,1fr)}
   .step{border-bottom:1px solid var(--line-dark)}
   .step:nth-child(2n){border-right:0}
@@ -245,14 +259,14 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
   .spec{border-left:0;padding-left:0;padding-block:24px}
   .spec+.spec{border-top:1px solid var(--line-dark)}
   .hero h1{max-width:none}
+  .foot-in{grid-template-columns:1fr}
 }
 </style>
 
 <header class="site-head">
   <div class="wrap head-in">
     <a class="brand" href="#top">
-      <span class="mark" aria-hidden="true">GG</span>
-      <span><b>GG Service</b><span>Rappresentanza termotecnica</span></span>
+      <img src="assets/gg-service.png" alt="GG Service — Rappresentanza termotecnica" width="498" height="126">
     </a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="nav" aria-label="Apri il menu">☰</button>
     <nav class="nav" id="nav">
@@ -406,11 +420,11 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
         <dl>
           <div>
             <dt>Telefono</dt>
-            <dd><a href="tel:+390000000000">+39 000 000 0000</a><small>Lun–Ven, orario da definire</small></dd>
+            <dd><a href="tel:+393887225387">+39 388 722 5387</a></dd>
           </div>
           <div>
             <dt>Email</dt>
-            <dd><a href="mailto:info@ggservice.it">info@ggservice.it</a></dd>
+            <dd><a href="mailto:info@ggservice.info">info@ggservice.info</a><small>PEC: ggservicesrls@unapec.it</small></dd>
           </div>
           <div>
             <dt>Territorio</dt>
@@ -418,7 +432,7 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
           </div>
           <div>
             <dt>Sede</dt>
-            <dd>Indirizzo da inserire<small>P.IVA da inserire</small></dd>
+            <dd>Viale Antonio Ciamarra 259<small>00173 Roma (RM)</small></dd>
           </div>
         </dl>
       </div>
@@ -470,9 +484,35 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
 </main>
 
 <footer>
-  <div class="wrap foot-in">
-    <span>© <span id="year">2026</span> GG Service — Agenzia di rappresentanza termotecnica · Roma e Lazio</span>
-    <span><a href="#contatti">Contatti</a> · <a href="#">Privacy policy</a> · <a href="#">Cookie policy</a></span>
+  <div class="wrap">
+    <div class="foot-in">
+      <div class="foot-brand">
+        <img src="assets/gg-service.png" alt="GG Service — Rappresentanza termotecnica" width="498" height="126">
+        <p>Agenzia di rappresentanza termotecnica<br>Roma, provincia e Lazio</p>
+      </div>
+      <div class="foot-col">
+        <span class="mono">Contatti</span>
+        <p>
+          <a href="tel:+393887225387">+39 388 722 5387</a><br>
+          <a href="mailto:info@ggservice.info">info@ggservice.info</a><br>
+          <a href="mailto:ggservicesrls@unapec.it">ggservicesrls@unapec.it</a> <span>(PEC)</span>
+        </p>
+      </div>
+      <div class="foot-col">
+        <span class="mono">Dati societari</span>
+        <p>
+          GG Service S.r.l.s.<br>
+          Viale Antonio Ciamarra 259<br>
+          00173 Roma (RM)<br>
+          <span>P.IVA e C.F.</span> 18149751002<br>
+          <span>REA</span> 1764778
+        </p>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year">2026</span> GG Service S.r.l.s. — Tutti i diritti riservati</span>
+      <span><a href="#">Privacy policy</a> · <a href="#">Cookie policy</a> · Design by <a href="https://diegobono.it" target="_blank" rel="noopener">Diego Bono</a></span>
+    </div>
   </div>
 </footer>
 
@@ -510,7 +550,7 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
       '',
       d.get('messaggio')||''
     ].join('\n');
-    var href='mailto:info@ggservice.it'
+    var href='mailto:info@ggservice.info'
       +'?subject='+encodeURIComponent('Richiesta dal sito — '+(d.get('tipo')||'Contatto'))
       +'&body='+encodeURIComponent(body);
     note.textContent='Apriamo il tuo programma di posta con la richiesta già compilata…';
