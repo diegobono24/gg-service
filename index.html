@@ -136,18 +136,30 @@ section{scroll-margin-top:84px}
 .pull strong{color:var(--ember)}
 
 /* ---------- mandanti / collaborazioni ---------- */
-.brands{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark)}
+.brands{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
 .brandcard{
-  background:var(--ink-2);padding:34px 28px;min-height:170px;
-  display:flex;flex-direction:column;justify-content:space-between;gap:16px;
+  background:#fff;border:1px solid rgba(255,255,255,.08);border-radius:3px;
+  min-height:124px;padding:24px 22px;position:relative;
+  display:flex;align-items:center;justify-content:center;
+  text-decoration:none;transition:transform .16s,box-shadow .16s;
 }
-.brandcard .ref{font-family:"IBM Plex Mono",monospace;font-size:11px;color:#5E7381;letter-spacing:.12em}
-.brandcard b{font-family:Archivo,sans-serif;font-weight:800;font-size:clamp(26px,3.4vw,38px);letter-spacing:-.03em;line-height:1}
+.brandcard:hover{transform:translateY(-2px);box-shadow:0 10px 26px rgba(0,0,0,.33)}
+.brandcard img{max-width:100%;max-height:48px;width:auto;height:auto;object-fit:contain;display:block}
+/* loghi forniti solo in versione bianca: resi in negativo sulla piastra chiara */
+.brandcard img.neg{filter:invert(1)}
+.brandcard::after{
+  content:"\2197";position:absolute;top:9px;right:11px;
+  font-size:13px;line-height:1;color:#9FB0BA;opacity:0;transition:opacity .16s;
+}
+.brandcard:hover::after{opacity:1}
 .subhead{display:flex;align-items:baseline;gap:16px;margin:clamp(44px,6vw,64px) 0 22px}
 .subhead .mono{color:var(--ember-dark);white-space:nowrap}
 .subhead i{flex:1;height:1px;background:var(--line-dark);display:block}
-.collabs{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-dark);border:1px solid var(--line-dark)}
-.collab{background:var(--ink);padding:24px 26px;font-family:Archivo,sans-serif;font-weight:700;font-size:21px;letter-spacing:-.022em}
+.collabs{display:flex;flex-wrap:wrap;gap:14px}
+.collab{
+  background:var(--ink-2);border:1px solid var(--line-dark);border-radius:3px;
+  padding:20px 30px;font-family:Archivo,sans-serif;font-weight:700;font-size:21px;letter-spacing:-.022em;
+}
 .brand-note{margin-top:26px;color:var(--muted-dark);font-size:14.5px;max-width:60ch}
 .brand-note a{color:var(--ember-dark)}
 
@@ -223,10 +235,12 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
   .steps{grid-template-columns:repeat(2,1fr)}
   .step{border-bottom:1px solid var(--line-dark)}
   .step:nth-child(2n){border-right:0}
-  .cards,.who,.collabs{grid-template-columns:repeat(2,1fr)}
+  .cards,.who{grid-template-columns:repeat(2,1fr)}
+  .brands{grid-template-columns:repeat(3,1fr)}
 }
 @media (max-width:640px){
-  .specs-in,.cards,.who,.brands,.collabs,.steps,.frow{grid-template-columns:1fr}
+  .specs-in,.cards,.who,.steps,.frow{grid-template-columns:1fr}
+  .brands{grid-template-columns:repeat(2,1fr)}
   .step{border-right:0}
   .spec{border-left:0;padding-left:0;padding-block:24px}
   .spec+.spec{border-top:1px solid var(--line-dark)}
@@ -293,9 +307,21 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
         <h2>I marchi che rappresentiamo.</h2>
       </div>
       <div class="brands">
-        <article class="brandcard"><span class="ref">M—01</span><b>Elco</b></article>
-        <article class="brandcard"><span class="ref">M—02</span><b>HiTec System</b></article>
-        <article class="brandcard"><span class="ref">M—03</span><b>Redge</b></article>
+        <a class="brandcard" href="https://elco-burners.com/it/it/home" target="_blank" rel="noopener">
+          <img src="assets/elco.svg" alt="Elco" width="142" height="40">
+        </a>
+        <a class="brandcard" href="https://www.hitecsystems.it" target="_blank" rel="noopener">
+          <img class="neg" src="assets/hitec-system.svg" alt="HiTec System" width="151" height="46">
+        </a>
+        <a class="brandcard" href="https://www.redgehvac.com/it/" target="_blank" rel="noopener">
+          <img src="assets/redge.png" alt="Redge" width="225" height="74">
+        </a>
+        <a class="brandcard" href="https://www.ancamini.it/" target="_blank" rel="noopener">
+          <img class="neg" src="assets/an-camini.png" alt="AN Camini" width="547" height="150">
+        </a>
+        <a class="brandcard" href="https://raema.com" target="_blank" rel="noopener">
+          <img src="assets/raema.jpg" alt="Raema" width="600" height="180">
+        </a>
       </div>
 
       <div class="subhead">
@@ -303,9 +329,7 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
         <i aria-hidden="true"></i>
       </div>
       <div class="collabs">
-        <article class="collab">AN Camini</article>
         <article class="collab">BPS Clima</article>
-        <article class="collab">Raema</article>
       </div>
 
       <p class="brand-note">Per informazioni sui marchi che rappresentiamo, <a href="#contatti">scrivici</a>.</p>
