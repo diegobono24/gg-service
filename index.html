@@ -17,13 +17,71 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.png" type="image/png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@600;700;800&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
 <style>*{box-sizing:border-box}body{margin:0}</style>
 </head>
 <body>
 <style>
+/* Caratteri ospitati sul dominio: nessuna chiamata a Google Fonts,
+   quindi nessun IP dei visitatori trasmesso a terzi. */
+/* Archivo 600-800 */
+@font-face {
+  font-family: 'Archivo';
+  font-style: normal;
+  font-weight: 600 800;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(assets/fonts/archivo-600-800.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* IBM Plex Mono 400 */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(assets/fonts/ibm-plex-mono-400.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* IBM Plex Mono 500 */
+@font-face {
+  font-family: 'IBM Plex Mono';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(assets/fonts/ibm-plex-mono-500.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* IBM Plex Sans 400 */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(assets/fonts/ibm-plex-sans-400.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* IBM Plex Sans 500 */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 500;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(assets/fonts/ibm-plex-sans-500.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+/* IBM Plex Sans 600 */
+@font-face {
+  font-family: 'IBM Plex Sans';
+  font-style: normal;
+  font-weight: 600;
+  font-stretch: 100%;
+  font-display: swap;
+  src: url(assets/fonts/ibm-plex-sans-600.woff2) format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
 :root{
   --ink:#0E1519;
   --ink-2:#16222B;
@@ -81,6 +139,9 @@ p{margin:0}
   display:inline-flex;align-items:center;justify-content:center;gap:9px;
   font-family:"IBM Plex Sans",sans-serif;font-weight:600;font-size:14.5px;
   padding:12px 22px;border-radius:2px;border:1.5px solid transparent;
+  /* i <button> hanno uno sfondo predefinito del browser, gli <a> no:
+     senza questa riga .btn-ghost su un button diventa grigio chiaro con testo bianco */
+  background:transparent;
   text-decoration:none;cursor:pointer;transition:background .16s,color .16s,border-color .16s;
 }
 .btn-ember{background:var(--ember);color:#fff}
@@ -262,6 +323,58 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
 }
 .foot-bottom a{color:var(--muted-dark);text-decoration:none;border-bottom:1px solid #243038}
 .foot-bottom a:hover{color:#fff;border-bottom-color:var(--ember-dark)}
+
+
+/* ---------- finestre informative ---------- */
+.modal{position:fixed;inset:0;z-index:200;display:flex;align-items:center;justify-content:center;padding:clamp(12px,4vw,40px)}
+.modal-sfondo{position:absolute;inset:0;background:rgba(5,9,11,.72);backdrop-filter:blur(3px)}
+.modal-box{
+  position:relative;background:var(--paper);color:var(--ink);border:1px solid var(--line);
+  width:min(760px,100%);max-height:min(86vh,900px);display:flex;flex-direction:column;border-radius:3px;
+  box-shadow:0 26px 70px rgba(0,0,0,.45);
+}
+.modal-testa{
+  display:flex;align-items:flex-start;gap:20px;justify-content:space-between;
+  padding:clamp(22px,3vw,30px) clamp(20px,3vw,34px) 18px;border-bottom:1px solid var(--line);
+}
+.modal-testa h2{font-size:clamp(21px,3vw,27px);letter-spacing:-.02em}
+.modal-testa .mono{color:var(--ember);display:block;margin-bottom:9px}
+.modal-x{
+  flex:0 0 34px;width:34px;height:34px;border:1px solid var(--line);background:var(--card);
+  color:var(--muted);font-size:19px;line-height:1;border-radius:3px;cursor:pointer;
+}
+.modal-x:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.modal-corpo{padding:clamp(20px,3vw,30px) clamp(20px,3vw,34px) clamp(26px,3.4vw,36px);overflow-y:auto}
+.modal-corpo h3{font-size:17px;letter-spacing:-.01em;margin:26px 0 8px}
+.modal-corpo h3:first-child{margin-top:0}
+.modal-corpo p,.modal-corpo li{font-size:15px;line-height:1.65;color:var(--ink)}
+.modal-corpo p+p{margin-top:10px}
+.modal-corpo ul{margin:10px 0 0;padding-left:18px;display:grid;gap:7px}
+.modal-corpo a{color:var(--ember)}
+.modal-corpo .nota{
+  margin-top:28px;padding:16px 18px;background:var(--card);border:1px solid var(--line);
+  border-left:2px solid var(--ember);font-size:13.5px;color:var(--muted);line-height:1.6;
+}
+.modal-corpo dl{margin:10px 0 0;display:grid;gap:4px}
+.modal-corpo dt{font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+.modal-corpo dd{margin:0;font-size:15px}
+body.bloccato{overflow:hidden}
+
+/* ---------- banner cookie ---------- */
+.cookie-banner{
+  position:fixed;left:0;right:0;bottom:0;z-index:180;
+  background:var(--ink-2);border-top:1px solid var(--line-dark);color:#fff;
+  padding:18px var(--gut);padding-bottom:calc(18px + env(safe-area-inset-bottom,0px));
+  box-shadow:0 -14px 40px rgba(0,0,0,.4);
+}
+.cookie-in{
+  max-width:var(--maxw);margin-inline:auto;
+  display:flex;flex-wrap:wrap;gap:16px 28px;align-items:center;justify-content:space-between;
+}
+.cookie-in p{font-size:14px;line-height:1.6;color:#C6D2D9;max-width:68ch}
+.cookie-in p a{color:var(--ember-dark)}
+.cookie-azioni{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+@media (max-width:700px){.cookie-azioni{width:100%}.cookie-azioni .btn{flex:1 1 auto}}
 
 /* ---------- responsive ---------- */
 @media (max-width:960px){
@@ -508,7 +621,7 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
         </div>
         <div class="consent">
           <input id="f-privacy" name="privacy" type="checkbox" required>
-          <label for="f-privacy">Ho letto l'informativa privacy e acconsento al trattamento dei dati per essere ricontattato.</label>
+          <label for="f-privacy">Ho letto l'<a href="#" data-apri="privacy">informativa privacy</a> e acconsento al trattamento dei dati per essere ricontattato.</label>
         </div>
         <div class="hp" aria-hidden="true">
           <label for="f-honey">Non compilare questo campo</label>
@@ -558,10 +671,112 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
     </div>
     <div class="foot-bottom">
       <span>© <span id="year">2026</span> GG Service S.r.l.s. — Tutti i diritti riservati</span>
-      <span><a href="#">Privacy policy</a> · <a href="#">Cookie policy</a> · Design by <a href="https://diegobono.it" target="_blank" rel="noopener">Diego Bono</a></span>
+      <span><a href="#" data-apri="privacy">Privacy policy</a> · <a href="#" data-apri="cookie">Cookie policy</a> · Design by <a href="https://diegobono.it" target="_blank" rel="noopener">Diego Bono</a></span>
     </div>
   </div>
 </footer>
+
+<div class="modal" id="modal-privacy" hidden role="dialog" aria-modal="true" aria-labelledby="titolo-privacy">
+  <div class="modal-sfondo" data-chiudi></div>
+  <div class="modal-box">
+    <div class="modal-testa">
+      <div>
+        <span class="mono">Articolo 13 GDPR</span>
+        <h2 id="titolo-privacy">Informativa privacy</h2>
+      </div>
+      <button class="modal-x" type="button" data-chiudi aria-label="Chiudi">&times;</button>
+    </div>
+    <div class="modal-corpo">
+      <h3>Chi tratta i tuoi dati</h3>
+      <p>Il titolare del trattamento è:</p>
+      <dl>
+        <dt>Società</dt><dd>GG Service S.r.l.s.</dd>
+        <dt>Sede</dt><dd>Viale Antonio Ciamarra 259 — 00173 Roma (RM)</dd>
+        <dt>P.IVA e C.F.</dt><dd>18149751002</dd>
+        <dt>Email</dt><dd><a href="mailto:info@ggservice.info">info@ggservice.info</a></dd>
+        <dt>PEC</dt><dd><a href="mailto:ggservicesrls@unapec.it">ggservicesrls@unapec.it</a></dd>
+      </dl>
+
+      <h3>Quali dati raccogliamo</h3>
+      <p>Solo quelli che inserisci nel modulo di contatto: nome e cognome, azienda, indirizzo email, numero di telefono, tipo di richiesta e il testo del messaggio. Azienda e telefono sono facoltativi.</p>
+      <p>Il server registra inoltre, per sicurezza e diagnostica, i normali dati tecnici di navigazione: indirizzo IP, data e ora della richiesta, pagina richiesta e tipo di browser. Non sono usati per identificarti né incrociati con altro.</p>
+
+      <h3>Perché li trattiamo</h3>
+      <ul>
+        <li><strong>Per risponderti.</strong> Base giuridica: l'esecuzione di misure precontrattuali richieste da te, articolo 6.1.b del GDPR, insieme al consenso che presti spuntando la casella del modulo.</li>
+        <li><strong>Per la sicurezza del sito.</strong> Base giuridica: il nostro legittimo interesse a mantenere il servizio funzionante e protetto, articolo 6.1.f.</li>
+      </ul>
+      <p>Non usiamo i tuoi dati per inviarti comunicazioni commerciali se non ce lo chiedi espressamente, e non facciamo profilazione né processi decisionali automatizzati.</p>
+
+      <h3>Per quanto tempo li conserviamo</h3>
+      <p>Le richieste ricevute dal modulo restano nella nostra casella di posta per il tempo necessario a gestirle e a dare seguito a eventuali rapporti commerciali, e comunque non oltre 24 mesi dall'ultimo contatto, salvo obblighi di legge più lunghi, per esempio quelli fiscali. I log tecnici del server sono conservati per il periodo stabilito dal fornitore di hosting.</p>
+
+      <h3>A chi possono essere comunicati</h3>
+      <p>I tuoi dati non vengono diffusi né venduti. Possono essere trattati, per nostro conto e in qualità di responsabili del trattamento, dai fornitori che ci permettono di far funzionare il sito e la posta elettronica: <strong>Hostinger International Ltd</strong>, che ospita il sito e la casella di posta su server situati nell'Unione Europea.</p>
+      <p>Non effettuiamo trasferimenti di dati al di fuori dello Spazio Economico Europeo.</p>
+
+      <h3>Come li proteggiamo</h3>
+      <p>Il sito viaggia su connessione cifrata HTTPS. I messaggi del modulo vengono spediti su canale cifrato con autenticazione, e le credenziali di invio sono conservate fuori dalla cartella pubblica del sito, non raggiungibili dal web.</p>
+
+      <h3>I tuoi diritti</h3>
+      <p>Puoi in ogni momento chiedere di accedere ai tuoi dati, correggerli, cancellarli, limitarne il trattamento, riceverli in formato leggibile da una macchina oppure opporti al trattamento. Puoi anche revocare il consenso prestato, senza che questo pregiudichi la liceità di quanto fatto prima della revoca. Sono i diritti previsti dagli articoli da 15 a 22 del GDPR.</p>
+      <p>Per esercitarli scrivi a <a href="mailto:info@ggservice.info">info@ggservice.info</a>. Se ritieni che il trattamento violi la normativa puoi presentare reclamo al <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la protezione dei dati personali</a>.</p>
+
+      <h3>Modifiche</h3>
+      <p>Se questa informativa cambia, la versione aggiornata viene pubblicata su questa stessa pagina.</p>
+      <p><strong>Ultimo aggiornamento:</strong> 13 ottobre 2026.</p>
+    </div>
+  </div>
+</div>
+
+<div class="modal" id="modal-cookie" hidden role="dialog" aria-modal="true" aria-labelledby="titolo-cookie">
+  <div class="modal-sfondo" data-chiudi></div>
+  <div class="modal-box">
+    <div class="modal-testa">
+      <div>
+        <span class="mono">Cosa salva questo sito</span>
+        <h2 id="titolo-cookie">Cookie policy</h2>
+      </div>
+      <button class="modal-x" type="button" data-chiudi aria-label="Chiudi">&times;</button>
+    </div>
+    <div class="modal-corpo">
+      <h3>In breve</h3>
+      <p>Questo sito <strong>non usa cookie di profilazione, di statistica o di marketing</strong>, e non installa strumenti di analisi del traffico. Non ci sono servizi di terze parti che raccolgono dati sulla tua navigazione.</p>
+
+      <h3>Cosa sono i cookie</h3>
+      <p>I cookie sono piccoli file che un sito salva nel tuo browser per ricordare informazioni tra una visita e l'altra. Alcuni servono a far funzionare il sito, altri a misurare le visite, altri ancora a mostrare pubblicità personalizzata. Solo i primi possono essere usati senza il tuo consenso.</p>
+
+      <h3>Cosa salviamo noi</h3>
+      <p>Un'unica informazione, e solo dopo che hai risposto al banner: la tua scelta sul consenso. Viene conservata nella memoria locale del tuo browser con la chiave <code>gg-consenso</code>, resta sul tuo dispositivo, non viene trasmessa a noi né a nessun altro e serve soltanto a non riproporti il banner a ogni pagina.</p>
+      <p>Tecnicamente non è nemmeno un cookie, ma una voce di <em>local storage</em>: la segnaliamo comunque perché è l'unica cosa che questo sito scrive sul tuo dispositivo.</p>
+
+      <h3>Servizi di terze parti</h3>
+      <p>Nessuno. I caratteri tipografici del sito sono ospitati direttamente sul nostro dominio e non vengono caricati da Google Fonts o da altri fornitori esterni: nessun soggetto terzo riceve il tuo indirizzo IP durante la navigazione.</p>
+      <p>Il modulo di contatto invia la richiesta direttamente al nostro server e alla nostra casella di posta, senza passare da servizi esterni di raccolta moduli.</p>
+
+      <h3>Se in futuro cambiasse qualcosa</h3>
+      <p>Se un domani attivassimo strumenti di statistica o di marketing, verrebbero caricati soltanto dopo un tuo consenso esplicito tramite il banner, e questa pagina verrebbe aggiornata di conseguenza.</p>
+
+      <h3>Come cancellare quello che è stato salvato</h3>
+      <p>Puoi rimuovere la tua scelta in qualsiasi momento svuotando i dati dei siti dal tuo browser, dalle impostazioni relative alla privacy. Al tuo prossimo accesso il banner ricomparirà e potrai decidere di nuovo.</p>
+
+      <h3>Dati personali</h3>
+      <p>Per sapere come trattiamo i dati che ci invii tramite il modulo, leggi l'<a href="#" data-apri="privacy">informativa privacy</a>.</p>
+
+      <p><strong>Ultimo aggiornamento:</strong> 13 ottobre 2026.</p>
+    </div>
+  </div>
+</div>
+
+<div class="cookie-banner" id="cookie-banner" hidden role="region" aria-label="Informativa cookie">
+  <div class="cookie-in">
+    <p>Questo sito non usa cookie di profilazione e non carica servizi di terze parti. L'unica cosa che salviamo nel tuo browser è la risposta che dai qui sotto. <a href="#" data-apri="cookie">Leggi la cookie policy</a>.</p>
+    <div class="cookie-azioni">
+      <button class="btn btn-ghost btn-sm" type="button" data-consenso="rifiuta">Rifiuta</button>
+      <button class="btn btn-ember btn-sm" type="button" data-consenso="accetta">Accetta</button>
+    </div>
+  </div>
+</div>
 
 <script>
 (function(){
@@ -659,6 +874,80 @@ footer{background:#0A1013;color:var(--muted-dark);border-top:1px solid var(--lin
     form.hidden=false;
     document.getElementById('f-nome').focus();
   });
+
+  /* ---------------- finestre informative e consenso ---------------- */
+
+  var CHIAVE='gg-consenso';
+  var ultimoFocus=null;
+
+  function leggiScelta(){
+    try{ return localStorage.getItem(CHIAVE); }catch(e){ return null; }   // modalita' privata, dati bloccati
+  }
+  function salvaScelta(v){
+    try{ localStorage.setItem(CHIAVE,v); }catch(e){}
+  }
+
+  function apriModale(nome){
+    var m=document.getElementById('modal-'+nome);
+    if(!m)return;
+    ultimoFocus=document.activeElement;
+    m.hidden=false;
+    document.body.classList.add('bloccato');
+    var x=m.querySelector('.modal-x');
+    if(x)x.focus();
+  }
+  function chiudiModali(){
+    var aperte=document.querySelectorAll('.modal:not([hidden])');
+    if(!aperte.length)return;
+    for(var i=0;i<aperte.length;i++){aperte[i].hidden=true;}
+    document.body.classList.remove('bloccato');
+    if(ultimoFocus&&ultimoFocus.focus){ultimoFocus.focus();ultimoFocus=null;}
+  }
+
+  document.addEventListener('click',function(e){
+    var apri=e.target.closest('[data-apri]');
+    if(apri){
+      e.preventDefault();
+      // da dentro una modale si puo' saltare all'altra
+      if(apri.closest('.modal'))chiudiModali();
+      apriModale(apri.getAttribute('data-apri'));
+      return;
+    }
+    if(e.target.closest('[data-chiudi]')){ e.preventDefault(); chiudiModali(); }
+  });
+
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape')chiudiModali();
+  });
+
+  // Banner: compare solo se non c'e' ancora una scelta registrata
+  var banner=document.getElementById('cookie-banner');
+  if(banner){
+    if(!leggiScelta())banner.hidden=false;
+    banner.addEventListener('click',function(e){
+      var b=e.target.closest('[data-consenso]');
+      if(!b)return;
+      var scelta=b.getAttribute('data-consenso');
+      salvaScelta(scelta);
+      banner.hidden=true;
+      if(scelta==='accetta')eseguiInAttesa();
+    });
+  }
+
+  /* Gancio per il futuro: se un domani si aggiungono statistiche o pixel
+     di marketing, vanno registrati qui e partono solo dopo l'accettazione.
+       ggConsenso.onAccetta(function(){ ...carica lo script... });            */
+  var inAttesa=[];
+  function eseguiInAttesa(){
+    while(inAttesa.length){ try{ inAttesa.shift()(); }catch(e){} }
+  }
+  window.ggConsenso={
+    stato:function(){ return leggiScelta(); },
+    accettato:function(){ return leggiScelta()==='accetta'; },
+    onAccetta:function(fn){ if(leggiScelta()==='accetta'){ try{fn();}catch(e){} } else { inAttesa.push(fn); } },
+    riapri:function(){ if(banner)banner.hidden=false; }
+  };
+
 })();
 </script>
 </body>
