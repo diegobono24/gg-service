@@ -42,6 +42,9 @@
   color-scheme:light;
 }
 *{box-sizing:border-box}
+/* Serve perche' una regola di classe che imposta display batte il display:none
+   che il browser applica agli elementi con attributo hidden. */
+[hidden]{display:none!important}
 body{
   margin:0;
   background:var(--paper);
